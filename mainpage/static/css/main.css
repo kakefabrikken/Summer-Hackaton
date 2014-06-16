@@ -1,0 +1,152 @@
+body {
+    background-color: rgba(0,0,0,0.2);
+    font-family: Helvetica, Arial, sans-serif;
+}
+#upper {
+    position: fixed;
+    top: 0px;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+#content {
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    height: 100%;
+    min-height:100%;
+    background-color: #ddd;
+}
+#kittens, #content {
+    margin-left: auto;
+    margin-right: auto;
+ /*   min-width:660px;
+    max-width:1028px;*/
+    width: 800px;
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" or "auto" to enable*/
+}
+header {
+ /*   position: relative;
+    left: 0;
+    right: 0;
+    top 0;*/
+    height: 70px;
+    width: 800px;
+    background-color: #777;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+header h1 {
+    text-transform:uppercase;
+    font-weight:bold;
+    text-shadow: 1px 1px lightgrey;
+}
+
+nav {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    left: 0;
+    right: 0;
+    position: relative;
+    background-color:#2C5463;
+    height:40px;
+  
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+ 
+nav ul {
+    font-family: Arial, Verdana;
+    font-size: 20px;
+  /*margin: 0;
+  padding: 0;*/
+    list-style: none;
+    align-content: center;
+    display:inline;
+}
+ 
+nav ul li {
+    display:inline-block;
+}
+ 
+nav li ul { 
+  display: none; 
+}
+ 
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 7px 15px 3px 15px;
+  background: #2C5463;
+  color: #ffffff;  
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  height:30px; /* Width and height of top-level nav items */
+  width:90px;
+  text-align:center;
+}
+ 
+nav ul li a:hover { 
+  background: #617F8A; 
+}
+
+#buzzwords {
+    margin:0 auto;
+    padding: 30px;
+    width:100%;
+    overflow:hidden;
+}
+#lower {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#kittens {
+    position: relative; /*needed for kittens to be placed inside here*/
+    background-color: #444;
+    bottom: 0;
+    height: 300px; /*Height of bottom frame div*/
+    /*position: fixed;*/
+    text-align: center;
+    color: white;
+}
+
+#person h1 {
+    font-weight:bold;
+    font-size: 16px;
+}
+/*
+#person {
+   /* display: inline-block;*/
+/*    width: 190px;
+    height: 60px;
+    font-size: 12px;
+    background: #377ca2;
+    color: #fff;
+    /*vertical-align:top;
+    text-align:right;*/
+/*    float:left;
+    overflow: auto;
+}*/
+description {
+    float:left;
+    width=20px;
+}
+
+image {
+width=50px; height=50px;
+}
+
+profile_img {
+    float:left;
+}
