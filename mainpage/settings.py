@@ -108,3 +108,5 @@ TEMPLATE_DIRS = (
     os.path.join( BASE_DIR, 'mainpage/templates' ),
     os.path.join( BASE_DIR, 'blog/templates' ),
 )
+
+MARKDOWN_EDITOR_SKIN = 'simple'
