@@ -46,7 +46,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'django_markdown',
 )
+
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -105,3 +108,5 @@ TEMPLATE_DIRS = (
     os.path.join( BASE_DIR, 'mainpage/templates' ),
     os.path.join( BASE_DIR, 'blog/templates' ),
 )
+
+MARKDOWN_EDITOR_SKIN = 'simple'

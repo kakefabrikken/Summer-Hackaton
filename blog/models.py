@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 # Create your models here.
 
 
@@ -19,12 +20,16 @@ class Blogpost(models.Model):
 	title = models.CharField(max_length=50)
 	text = models.TextField()
 	created_date = models.DateTimeField(auto_now=True)
+        slug = models.SlugField(unique=True, max_length=255)
 	writers = models.ManyToManyField(Writer, through="Blogpost_writer")
 
 	def __unicode__(self):
 		return self.text
 
-#	def was_published_recently(self, day_count):
+        #def get_absolute_url(self):
+        #    return reverse('blog.views.post', args=[self.slug])
+	
+        #def was_published_recently(self, day_count):
 #		if (day_count > 0):
 #			return self.created_date >= timezone.now() - datetime.timedelta(days=day_count)
 #		else:

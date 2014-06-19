@@ -54,4 +54,9 @@ docs/_build/
 
 # Django
 db.sqlite3
-mainpage/settings.py
+mainpage/secret_key.txt
+
+# Vim
+*~
+*.swp
+*.swo
