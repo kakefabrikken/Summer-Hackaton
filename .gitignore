@@ -55,3 +55,8 @@ docs/_build/
 # Django
 db.sqlite3
 mainpage/settings.py
+
+# Vim
+*~
+*.swp
+*.swo
