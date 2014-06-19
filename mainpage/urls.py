@@ -1,9 +1,10 @@
 from django.conf.urls import patterns, include, url
-from django_markdown import flatpages
+#from django_markdown import flatpages
+#not using flatpages as we probably never use flatpages, only template stuff
 from django.contrib import admin
 
 admin.autodiscover()
-flatpages.register()
+#flatpages.register()
 
 urlpatterns = patterns('',
     url(r'^$', 'mainpage.views.index', name='index'),
