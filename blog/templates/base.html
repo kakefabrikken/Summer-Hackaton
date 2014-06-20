@@ -44,8 +44,8 @@
 
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="http://www.cappuci.no">Home</a></li>
+          <li><a href="http://www.cappuci.no/blog">Blog</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -53,16 +53,27 @@
 
       <subnav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>Blogger:</li>
+          <li><a href="http://www.cappuci.no/blog/finn">Finn</a></li>
+          <li><a href="http://www.cappuci.no/blog/kristian">Kristian</a></li>
+          <li><a href="http://www.cappuci.no/blog/marius">Marius</a></li>
+          <li><a href="http://www.cappuci.no/blog/ilse">Ilse</a></li>
+          <li><a href="http://www.cappuci.no/blog/tobias">Tobias</a></li>
         </ul>
       </subnav>
+      <hr>
       <!-- Jumbotron -->
       <div class="jumbotron" style="background: #ddd">
-        <h1>Buzzword!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <h1>
+        {% block blogtitle %}
+            PLaceholder Title!
+        {% endblock %}
+         </h1>
+        <p class="lead">
+        {% block text %}
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.
+        {% endblock %}
+        </p>
       </div>
       <!-- FOOTER -->
       <footer>

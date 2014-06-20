@@ -7,5 +7,5 @@ def blogindex(request):
         print "rendering blog"
 	#return render(request, 'blog/index.html')
         template = loader.get_template("blog/blog.html")
-        c = Context({"var": "Testing"})
+        c = Context({})
         return HttpResponse( template.render(c) )

@@ -4,15 +4,11 @@ body {
 }
 
 nav {
-    font-family: Helvetica, Arial, sans-serif;
     left: 0;
     right: 0;
     position: relative;
-    /*display: inline-block;
-    background-color:#2C5463;*/
     height:40px;
   /*  border-width:1px 0;
-    list-style:none;
     margin:0;
     padding:4;*/
     text-align:center;
@@ -29,10 +25,7 @@ nav ul {
  
 nav ul li {
     display:inline-block;
-}
- 
-nav li ul { 
-  display: none; 
+    margin: 0 12px 0 0;
 }
  
 nav ul li a {
@@ -46,6 +39,45 @@ nav ul li a {
   white-space: nowrap;
   height:30px; /* Width and height of top-level nav items */
   /*width:90px;*/
+  text-align:center;
+}
+
+subnav {
+    font-family: Helvetica, Arial, sans-serif;
+    left: 0;
+    right: 0;
+    top: 112px;
+    position: absolute;
+    display: inline-block;
+    height:22px;
+  /*  border-width:1px 0;
+    list-style:none;*/
+    text-align:center;
+}
+ 
+subnav ul {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-content: center;
+    text-align: center;
+    display:inline;
+}
+ 
+subnav ul li {
+    display:inline-block;
+    margin: 0 5px 0 0;
+}
+ 
+subnav ul li a {
+  display: block;
+  text-decoration: none;
+  /*background: #2C5463;
+  color: #ffffff;  */
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
   text-align:center;
 }
  
