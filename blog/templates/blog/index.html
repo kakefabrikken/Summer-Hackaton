@@ -9,16 +9,15 @@
     <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
 
     <title>
-        {% block title %}
+        {{ var }}
         Buzzword
-        {% endblock %}
     </title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/blog.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,9 +33,7 @@
         <div class="span2"></div>
         <div class="span10" style="text-align: center">
             <h2>
-                {% block name %}
-                Overskrift
-                {% endblock %}
+                {% now "jS F Y H:i" %}
             </h2>
         </div>
         <div class="span2"></div>
@@ -51,14 +48,6 @@
         </ul>
       </nav>
 
-      <subnav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </subnav>
       <!-- Jumbotron -->
       <div class="jumbotron" style="background: #ddd">
         <h1>Buzzword!</h1>
