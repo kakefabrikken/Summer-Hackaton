@@ -36,8 +36,20 @@ def writerpage(request, writer):
     return HttpResponse( template.render(c) )
 
 def blogpost(request, writer, title_entered):
-    title = title_entered.replace('_', ' ')
+    db_title = title_entered.replace('_', ' ')
     writer_number = getWriterID( writer )
+    if (not writer_number):
+        raise Http404()
+    # should check who wrote the blogpost here
+    # should do something to include all writers in writerstring
+    writerstring = writer
+    blogpost = Blogpost.objects.get( title=db_title )
+    if (not blogpost):
+        raise Http404()
+
+    template = loader.get_template("blog/blogpost.html")
+    c = Context({ 'blogtitle':blogpost.title, 'text':blogpost.text, 'writers':writerstring  })
+    return HttpResponse( template.render(c) )
 
 def getWriterID( name ):
     name = name.lower()
