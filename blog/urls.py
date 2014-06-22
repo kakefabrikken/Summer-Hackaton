@@ -1,7 +1,12 @@
 from django.conf.urls import patterns, url
-#from blog import views
 
-urlpatterns = patterns('',
-        #url(r'^$', 'blog.views.blogindex', name='blog'),
-        url(r'^$', 'blog.views.blogindex', name='blogindex'),
+urlpatterns = patterns('', #<-- if all functions start with same 
+    # blog
+    url(r'^$', 'blog.views.blogindex', name="blogindex"),
+
+    # blog/writer - the first character can be uppercase
+    url(r'^(?P<writer>[A-Za-z][a-z]+)$', 'blog.views.writerpage'),
+
+    # blog/writer/title
+    url(r'^(?P<writer>[A-Za-z][a-z]+)/(?P<title_entered>[^/]+)', 'blog.views.blogpost'),
 )
