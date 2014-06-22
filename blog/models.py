@@ -1,7 +1,5 @@
 from django.db import models
 from django.utils import timezone
-# Create your models here.
-
 
 class Writer(models.Model):
 	firstname = models.CharField(max_length=50)
@@ -22,14 +20,13 @@ class Blogpost(models.Model):
 	writers = models.ManyToManyField(Writer, through="Blogpost_writer")
 
 	def __unicode__(self):
-		return self.text
+		return self.title
 
 #	def was_published_recently(self, day_count):
 #		if (day_count > 0):
 #			return self.created_date >= timezone.now() - datetime.timedelta(days=day_count)
 #		else:
 #			return self.created_date >= timezone.now() - datetime.timedelta(days=1)
-			
 
 
 class Blogpost_writer(models.Model):
