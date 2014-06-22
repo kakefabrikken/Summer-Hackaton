@@ -11,7 +11,6 @@ class Blogpostinfo:
         self.summary = summary
 
 def blogindex(request):
-    #return render(request, 'blog/index.html')
     template = loader.get_template("blog/blog.html")
     c = Context({})
     return HttpResponse( template.render(c) )
