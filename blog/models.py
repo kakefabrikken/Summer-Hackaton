@@ -8,6 +8,7 @@ class Writer(models.Model):
 	telephone = models.CharField(max_length=20)
 	picture = models.ImageField(upload_to='media/images/')
 	about = models.TextField()
+        blogposts = models.ManyToManyField('Blogpost', through='Blogpost_writer')
 
 	def __unicode__(self):
 		return self.firstname
@@ -17,7 +18,7 @@ class Blogpost(models.Model):
 	title = models.CharField(max_length=50)
 	text = models.TextField()
 	created_date = models.DateTimeField(auto_now=True)
-	writers = models.ManyToManyField(Writer, through="Blogpost_writer")
+	writers = models.ManyToManyField('Writer', through='Blogpost_writer')
 
 	def __unicode__(self):
 		return self.title
