@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{writer}} - Buzzword{% endblock %}
+{% block blogtitle %}
+{{writer}} sin blog
+{% endblock %}
+{% block text %}
+{% for post in blogposts %}
+    <h3>{{ post.title }}</h3>
+    {{ post.summary }}
+    <a href="{{ post.slug }}">Read more</a>
+{% endfor %}
+{% endblock %}
+{% block name %}Blog{% endblock %}

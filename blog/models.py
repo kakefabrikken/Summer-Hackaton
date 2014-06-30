@@ -11,9 +11,13 @@ class Writer(models.Model):
 	telephone = models.CharField(max_length=20)
 	picture = models.ImageField(upload_to='media/images/')
 	about = models.TextField()
+        blogposts = models.ManyToManyField('Blogpost', through='Blogpost_writer')
 
 	def __unicode__(self):
 		return self.firstname
+
+        class Meta:
+            ordering = ('id',)
 
 
 class Blogpost(models.Model):
@@ -22,9 +26,13 @@ class Blogpost(models.Model):
 	created_date = models.DateTimeField(auto_now=True)
         slug = models.SlugField(unique=True, max_length=255)
 	writers = models.ManyToManyField(Writer, through="Blogpost_writer")
+	writers = models.ManyToManyField('Writer', through='Blogpost_writer')
 
 	def __unicode__(self):
-		return self.text
+		return self.title
+
+        class Meta:
+            ordering = ('created_date',)
 
         #def get_absolute_url(self):
         #    return reverse('blog.views.post', args=[self.slug])
@@ -34,9 +42,14 @@ class Blogpost(models.Model):
 #			return self.created_date >= timezone.now() - datetime.timedelta(days=day_count)
 #		else:
 #			return self.created_date >= timezone.now() - datetime.timedelta(days=1)
-			
 
 
 class Blogpost_writer(models.Model):
 	writer = models.ForeignKey(Writer)
 	blogpost= models.ForeignKey(Blogpost)
+
+        class Meta:
+            ordering = ('id',)
+
+	def __unicode__(self):
+            return str(self.id).decode('UTF-8') #convert int to unicode string
